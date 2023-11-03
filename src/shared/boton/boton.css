@@ -1,0 +1,31 @@
+.div-start {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn-style {
+    color: #fff;
+    word-spacing: 3px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0px 4px 6px #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    border-radius: 10px;
+    background: #38d910;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.start-btn-style:hover {
+    color: #4DF822;
+    background: black;
+    transition: .7s;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.91);
+}
+
