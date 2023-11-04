@@ -3,7 +3,6 @@
   import Game from '../../screens/game/Game';
   import Winner from '../../screens/winner/Winner';
   import Loader from '../../shared/loader/Loader';
-  // import bglarge from '../../assets/bg-large.jpg'
 
   const Main = () => {
     const colores = "#FF0000 (Rojo),#00FF00 (Verde),#0000FF (Azul),#FFFF00 (Amarillo),#FF00FF (Magenta),#00FFFF (Cian),#FFA500 (Naranja),#800080 (Púrpura),#008000 (Verde oscuro),#800000 (Marrón),#000080 (Azul oscuro),#808080 (Gris),#FFD700 (Dorado),#A52A2A (Marrón rojizo),#2E8B57 (Verde mar),#7FFF00 (Verde amarillento),#4B0082 (Índigo),#8B008B (Magenta oscuro),#DC143C (Rojo carmesí),#4682B4 (Azul acero)";
@@ -76,7 +75,6 @@
       
     return (
       <div className='container'>
-        {/* <img src={bglarge} alt='bg-large'/> */}
         {loader && <Loader colores={colors}/>}
         {!startGame && <PreviewGame colores={colors} toggle={toggle} squares={squares} onClick={handleStartGame}/>}
         {(startGame && squares.length > 0) && <Game randomColor={randomColor} colores={squares} onClick={handleClick}/>}
