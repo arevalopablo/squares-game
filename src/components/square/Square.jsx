@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cuadrado = (props) => {
+const Square = (props) => {
   const { width, height, background, border, onClick } = props;
   return (
     <div
@@ -17,4 +17,4 @@ const Cuadrado = (props) => {
   );
 };
 
-export default Cuadrado;
+export default Square;

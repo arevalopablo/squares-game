@@ -1,6 +1,6 @@
 import React from "react";
 import "./mainBoard.css";
-import Cuadrado from "../cuadrado/Cuadrado";
+import Square from "../square/Square";
 
 const MainBoard = (props) => {
   const { colores, onClick } = props;
@@ -9,7 +9,7 @@ const MainBoard = (props) => {
     <>
       <div className="main">
         {colores.map((color) => (
-          <Cuadrado
+          <Square
             key={color.id}
             width={"60px"}
             height={"60px"}

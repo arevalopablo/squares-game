@@ -23,7 +23,7 @@
     const [loader, setLoader] = useState(true)
 
     const colorAlAzar = () => {
-      if (!squares.length) {      /*CHEQUEAR ESTA LINEA*/
+      if (!squares.length) {    
         return null
       }
       const numeroAleatorio = Math.floor(Math.random() * squares.length)
@@ -51,7 +51,7 @@
     }
 
     const handleStartGame = () => {
-      if (!squares.length) {   /* ************************************* */
+      if (!squares.length) {  
       alert('Choose at least one color')
       } else {
         setStartGame(true)
