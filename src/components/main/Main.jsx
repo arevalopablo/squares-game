@@ -3,6 +3,7 @@
   import Game from '../../screens/game/Game';
   import Winner from '../../screens/winner/Winner';
   import Loader from '../../shared/loader/Loader';
+import { isCheck } from '../helper';
 
   const Main = () => {
     const colores = "#FF0000 (Rojo),#00FF00 (Verde),#0000FF (Azul),#FFFF00 (Amarillo),#FF00FF (Magenta),#00FFFF (Cian),#FFA500 (Naranja),#800080 (Púrpura),#008000 (Verde oscuro),#800000 (Marrón),#000080 (Azul oscuro),#808080 (Gris),#FFD700 (Dorado),#A52A2A (Marrón rojizo),#2E8B57 (Verde mar),#7FFF00 (Verde amarillento),#4B0082 (Índigo),#8B008B (Magenta oscuro),#DC143C (Rojo carmesí),#4682B4 (Azul acero)";
@@ -21,6 +22,7 @@
     const [squares, setSquares] = useState([])
     const [startGame, setStartGame] = useState(false)
     const [loader, setLoader] = useState(true)
+    const [initialCheck, setInitialCheck] = useState(false)
 
     const colorAlAzar = () => {
       if (!squares.length) {    
@@ -39,7 +41,7 @@
     }, 3000);
 
     const toggle = (color) => {
-      const siestaenelarray = squares.some((cuad) => cuad.id === color.id)
+      const siestaenelarray = isCheck(squares, color)
 
       if (!siestaenelarray) {
         setSquares([...squares, color])
@@ -72,11 +74,19 @@
         colorAlAzar()
       }
     }
+
+    const handleAddAll = () => {
+      setSquares(colors)
+    }
+
+    const handleRemoveAll = () => {
+      setSquares([])
+    }
       
     return (
       <div className='container'>
         {loader && <Loader colores={colors}/>}
-        {!startGame && <PreviewGame colores={colors} toggle={toggle} squares={squares} onClick={handleStartGame}/>}
+        {!startGame && <PreviewGame colores={colors} toggle={toggle} squares={squares} onClick={handleStartGame} handleAddAll={handleAddAll} handleRemoveAll={handleRemoveAll}/>}
         {(startGame && squares.length > 0) && <Game randomColor={randomColor} colores={squares} onClick={handleClick}/>}
         {(startGame && squares.length < 1) && <Winner onClick={restartGame}/>}
         

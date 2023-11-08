@@ -17,4 +17,8 @@
 
 Puedes probar una versión de demostración del juego [aquí](https://squares-game-topaz.vercel.app/).
 
+## Figma File
+
+Puedes ver el diseño previo de Figma [aquí](https://www.figma.com/file/WE5ay8NZ5JjEzx6qd0c60m/Square-Game?type=design&node-id=148-208&mode=design&t=Fr5luDCFcOAAc5Dd-0).
+
 
